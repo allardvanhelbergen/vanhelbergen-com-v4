@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.vanhelbergen.com">
-    <img alt="AvH monogram" src="./static/avh-monogram.svg" width="128" />
+    <img alt="AvH monogram" src="./public/avh-monogram.svg" width="128" />
   </a>
 </p>
 <h1 align="center">
