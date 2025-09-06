@@ -7,7 +7,7 @@ export default defineConfig({
     setupFiles: ['./tests/setup/test-env.ts'],
     coverage: {
       provider: 'v8',
-      reports: ['text', 'lcov'],
+      reporter: ['text', 'lcov'],
       thresholds: { lines: 85 },
     },
   },
