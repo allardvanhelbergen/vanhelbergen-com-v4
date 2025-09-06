@@ -6,7 +6,19 @@ import unicorn from 'eslint-plugin-unicorn';
 import tailwind from 'eslint-plugin-tailwindcss';
 
 // Base ignores to keep noise down.
-const ignores = ['**/node_modules/**', '.next/**', 'dist/**', 'coverage/**'];
+const ignores = [
+  '**/node_modules/**',
+  '.next/**',
+  'dist/**',
+  'coverage/**',
+  'next-env.d.ts',
+  'playwright.config.ts',
+  'tailwind.config.ts',
+  'vitest.config.ts',
+  'tsconfig.tsbuildinfo',
+  // Generic generated declaration files (keep explicit next-env above); adjust if you add hand-authored .d.ts
+  '**/*.d.ts',
+];
 
 // Shared import/order groups definition.
 const importOrderRule = [
@@ -47,7 +59,6 @@ export default [
       tailwindcss: tailwind,
     },
     settings: {
-      react: { version: 'detect' },
       'import/resolver': {
         node: { extensions: ['.js', '.mjs', '.ts', '.tsx'] },
         typescript: {},
@@ -122,7 +133,7 @@ export default [
       '@typescript-eslint/no-floating-promises': 'off', // tests often intentionally ignore async output
     },
   },
-  // JS / config files: turn off type-aware rules that would error
+  // JS / config files: turn off type-aware + react rules (no JSX here)
   {
     files: [
       '**/*.config.{js,mjs,cjs}',
@@ -130,11 +141,19 @@ export default [
       'next.config.mjs',
       'postcss.config.mjs',
       'tailwind.config.{js,ts,mjs}',
+      'playwright.config.ts',
+      'vitest.config.ts',
     ],
     rules: {
       '@typescript-eslint/await-thenable': 'off',
       '@typescript-eslint/no-floating-promises': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-uses-react': 'off',
+      'react/no-unused-prop-types': 'off',
+      'react/self-closing-comp': 'off',
+      'react/jsx-no-leaked-render': 'off',
     },
+    settings: { react: { version: 'detect' } },
   },
   // Config / script overrides (allow dev dependencies + console)
   {
@@ -143,5 +162,10 @@ export default [
       'no-console': 'off',
       '@typescript-eslint/no-var-requires': 'off',
     },
+  },
+  // Global React version setting (must come after react plugin config to override warning)
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    settings: { react: { version: 'detect' } },
   },
 ];
