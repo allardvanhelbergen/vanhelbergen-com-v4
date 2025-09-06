@@ -60,8 +60,11 @@ export default [
     },
     settings: {
       'import/resolver': {
+        typescript: {
+          project: ['./tsconfig.json'],
+          alwaysTryTypes: true,
+        },
         node: { extensions: ['.js', '.mjs', '.ts', '.tsx'] },
-        typescript: {},
       },
     },
     rules: {

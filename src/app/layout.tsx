@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, JSX } from 'react';
 import './globals.css';
 
 export const dynamic = 'force-static';
@@ -9,7 +9,7 @@ export const metadata = {
   description: 'Personal site and portfolio',
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }): JSX.Element {
   return (
     <html lang="en" className="h-full bg-white text-slate-900 antialiased">
       <body className="min-h-screen font-sans">{children}</body>

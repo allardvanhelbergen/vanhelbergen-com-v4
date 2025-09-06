@@ -5,12 +5,14 @@ export type MonogramProps = {
   inheritColor?: boolean; // color inheritance toggle
 };
 
+import type { JSX } from 'react';
+
 export function Monogram({
   size = 112,
   title = 'AVH monogram',
   className = '',
   inheritColor = true,
-}: MonogramProps) {
+}: MonogramProps): JSX.Element {
   const stroke = inheritColor ? 'black' : 'black';
   const fill = inheritColor ? 'white' : 'white';
   return (

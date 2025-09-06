@@ -1,9 +1,11 @@
+import { Monogram } from '@/components/ui/monogram';
+
+import type { JSX } from 'react';
+
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-import { Monogram } from '@/components/ui/monogram';
-
-export default function HomePage() {
+export default function HomePage(): JSX.Element {
   return (
     <main className="flex min-h-[calc(100vh-0rem)] items-center justify-center p-6">
       <section className="flex max-w-2xl flex-col items-center space-y-6 text-center">
