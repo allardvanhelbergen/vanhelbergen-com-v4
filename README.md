@@ -21,8 +21,8 @@ Personal / portfolio site (v4) – Next.js 15 + React 19 + TypeScript + Tailwind
 ## Getting Started
 
 ```bash
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
 Visit http://localhost:3000.
@@ -42,7 +42,7 @@ Visit http://localhost:3000.
   "test:coverage": "vitest run --coverage",
   "e2e": "playwright test",
   "e2e:ui": "playwright test --ui",
-  "verify": "pnpm typecheck && pnpm lint && pnpm test"
+  "verify": "npm run typecheck && npm run lint && npm test"
 }
 ```
 
@@ -65,26 +65,26 @@ tests/              # Unit & e2e tests
 Run unit tests:
 
 ```bash
-pnpm test
+npm test
 ```
 
 Watch mode:
 
 ```bash
-pnpm test:watch
+npm run test:watch
 ```
 
-E2E tests (after `pnpm build && pnpm start &` in another shell):
+E2E tests (after `npm run build && npm start &` in another shell):
 
 ```bash
-pnpm e2e
+npm run e2e
 ```
 
 ## Linting & Formatting
 
 ```bash
-pnpm lint
-pnpm format
+npm run lint
+npm run format
 ```
 
 ## Tailwind
@@ -100,10 +100,10 @@ Every interactive element must have discernible text / label. Use semantic HTML 
 Build:
 
 ```bash
-pnpm build
+npm run build
 ```
 
-Then serve with `pnpm start`.
+Then serve with `npm start`.
 
 ---
 
