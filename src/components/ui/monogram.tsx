@@ -2,10 +2,7 @@ export type MonogramProps = {
   size?: number;
   title?: string;
   className?: string;
-  /**
-   * If true, stroke/fill colors inherit from current text color (preferred for theming).
-   */
-  inheritColor?: boolean;
+  inheritColor?: boolean; // color inheritance toggle
 };
 
 export function Monogram({
@@ -25,7 +22,6 @@ export function Monogram({
       viewBox="0 0 512 512"
       className={className}
     >
-      {/* <rect x="-144" y="-43" width="800" height="600" fill="{white}" /> */}
       <circle cx="256" cy="256" r="250" fill={fill} stroke={stroke} strokeWidth="12" />
       <circle cx="256" cy="256" r="234" fill={fill} stroke={stroke} strokeWidth="8" />
       <path

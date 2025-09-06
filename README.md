@@ -49,16 +49,22 @@ Visit http://localhost:3000.
 ## Directory Structure
 
 ```
-app/                # App Router entrypoints
-	layout.tsx
-	page.tsx
-components/         # (future) UI primitives & layout
-content/            # (future) MDX/markdown
-lib/                # Framework-agnostic utilities
-public/             # Static assets
-styles/             # Global / Tailwind artifacts
+src/
+  app/              # Next.js App Router (layout.tsx, page.tsx, future routes)
+  components/
+    ui/             # Low-level UI primitives (Monogram, buttons, etc.)
+  lib/              # Framework-agnostic utilities (e.g. format-date)
+  content/          # (future) MDX/markdown sources
+public/             # Static assets (images, favicon, svg)
 tests/              # Unit & e2e tests
+eslint.config.mjs   # Flat ESLint config
+tailwind.config.ts  # Tailwind configuration (points to src/**)
+vitest.config.ts    # Vitest setup
+playwright.config.ts# Playwright e2e config
+tsconfig.json       # TS with paths mapping @/* -> src/*
 ```
+
+Design intent: keep `src/` the single root for application + domain code; only build/config/infra files live at project root.
 
 ## Testing
 

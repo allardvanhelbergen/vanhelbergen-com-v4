@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { formatDateRFC822 } from '../../lib/format-date';
+
+import { formatDateRFC822 } from '@/lib/format-date';
 
 describe('formatDateRFC822', () => {
   it('formats a date string to expected pattern', () => {

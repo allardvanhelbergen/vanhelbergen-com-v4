@@ -1,9 +1,7 @@
 import type { ReactNode } from 'react';
 import './globals.css';
 
-// Force static site generation for all routes under this layout.
 export const dynamic = 'force-static';
-// No revalidation (build-time only). Set a number (seconds) later for ISR.
 export const revalidate = false;
 
 export const metadata = {
